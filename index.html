@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 <script src="js/supabase.js"></script>
+<script src="js/neon-effects.js"></script>
 <style>
 * { font-family: 'Inter', sans-serif; }
 body { min-height: 100vh; color: #dbeafe; background: radial-gradient(circle at top, rgba(79, 70, 229, 0.18), transparent 25%), radial-gradient(circle at right, rgba(56, 189, 248, 0.18), transparent 22%), linear-gradient(180deg, #050612 0%, #090a18 40%, #05040d 100%); }
@@ -22,6 +23,10 @@ body { min-height: 100vh; color: #dbeafe; background: radial-gradient(circle at 
 .hero-badge { background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.24); color: #c7d2fe; }
 .btn-view-details { background: rgba(99,102,241,0.1); color: #c7d2fe; border: 1px solid rgba(99,102,241,0.18); }
 .btn-view-details:hover { background: rgba(99,102,241,0.2); }
+    .support-section { margin-top: 2.5rem; }
+    .support-card { background: rgba(15, 12, 26, 0.95); border: 1px solid rgba(79, 70, 229, 0.16); border-radius: 30px; padding: 1.8rem; }
+    .support-link { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.95rem 1rem; border-radius: 20px; background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.18); color: #c7d2fe; text-decoration: none; transition: background 0.25s ease, border-color 0.25s ease; }
+    .support-link:hover { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.28); }
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #0a0a14; }
 ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
@@ -41,7 +46,7 @@ body { min-height: 100vh; color: #dbeafe; background: radial-gradient(circle at 
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center gap-2 cursor-pointer" onclick="location.href='index.html'">
         <div class="w-8 h-8 rounded-full bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-400 flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.25)]"><span class="text-sm font-bold">🌙</span></div>
-        <span class="text-xl font-bold bg-gradient-to-r from-violet-500 via-blue-400 to-cyan-300 bg-clip-text text-transparent">MoonX7</span>
+        <span class="text-xl font-bold bg-gradient-to-r from-violet-500 via-blue-400 to-cyan-300 bg-clip-text text-transparent">MoonX7 STORE </span>
       </div>
       <div class="flex items-center gap-6">
         <div class="relative">
@@ -66,7 +71,7 @@ body { min-height: 100vh; color: #dbeafe; background: radial-gradient(circle at 
       <span class="text-xs text-slate-100 font-medium">🔥 OFERTAS ESPECIALES 🔥</span>
     </div>
     <h1 class="text-5xl md:text-7xl font-black mb-4">
-      <span class="bg-gradient-to-r from-violet-500 via-blue-400 to-cyan-300 bg-clip-text text-transparent">MoonX7</span>
+      <span class="bg-gradient-to-r from-violet-500 via-blue-400 to-cyan-300 bg-clip-text text-transparent">MoonX7 store</span>
     </h1>
     <p class="text-zinc-400 text-lg max-w-2xl mx-auto">Los mejores mods, software y herramientas para tu experiencia gaming</p>
   </div>
@@ -85,6 +90,38 @@ body { min-height: 100vh; color: #dbeafe; background: radial-gradient(circle at 
   <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
   <div id="loadingProducts" class="text-center py-20 text-zinc-500">Cargando productos...</div>
 </div>
+
+<section class="support-section max-w-7xl mx-auto px-4 pb-16">
+  <div class="support-card grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+    <div class="space-y-4">
+      <p class="text-sm uppercase tracking-[0.28em] text-cyan-300">Soporte</p>
+      <h2 class="text-3xl font-black text-white">¿Necesitas ayuda? Estamos aquí.</h2>
+      <p class="text-zinc-400 max-w-xl">Escríbenos si tienes dudas, problemas con la descarga o quieres ayuda personalizada para tu compra.</p>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <a href="mailto:soporte@moonx7.store" class="support-link">
+          <span class="material-symbols-outlined">email</span> soporte@moonx7.store
+        </a>
+        <a href="https://wa.me/message/7Z75XQ45ZZ5JE1" class="support-link">
+          <span class="material-symbols-outlined">chat</span> WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <p class="text-sm uppercase tracking-[0.28em] text-cyan-300">Redes Sociales</p>
+      <div class="grid gap-3">
+        <a href="https://instagram.com/moonzazax7"_blank" rel="noopener noreferrer" class="support-link">
+          <span class="material-symbols-outlined">share</span> Instagram
+        </a>
+        <a href="https://t.me/moonzazax7"_blank" rel="noopener noreferrer" class="support-link">
+          <span class="material-symbols-outlined">link</span> Telegram
+        </a>
+        <a href="https://discord.gg/n3GdSFpq" class="support-link">
+          <span class="material-symbols-outlined">headphones</span> Discord
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Modal -->
 <div id="productModal" class="modal-backdrop">
