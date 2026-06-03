@@ -51,6 +51,181 @@
         .btn-add-plan:hover { background: rgba(99, 102, 241, 0.25); }
         .plan-preview { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
         .plan-chip { background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); color: #a5f3fc; border-radius: 999px; padding: 4px 10px; font-size: 0.75rem; }
+
+        /* ═══ ADMIN NEON ENHANCEMENTS ═══ */
+        @keyframes neonPulse {
+            0%,100% { box-shadow: 0 0 8px rgba(34,211,238,0.18), 0 0 20px rgba(99,102,241,0.1); }
+            50%      { box-shadow: 0 0 18px rgba(34,211,238,0.32), 0 0 40px rgba(99,102,241,0.16); }
+        }
+        @keyframes neonBorderAnim {
+            0%,100% { border-color: rgba(99,102,241,0.22); }
+            50%      { border-color: rgba(34,211,238,0.38); }
+        }
+
+        /* Sidebar neon */
+        .sidebar {
+            box-shadow: 4px 0 40px rgba(99,102,241,0.1) !important;
+            border-right: 1px solid rgba(99,102,241,0.22) !important;
+        }
+        .sidebar nav a.text-cyan-300 {
+            box-shadow: inset 3px 0 0 rgba(34,211,238,0.7), 0 0 20px rgba(34,211,238,0.08) !important;
+            background: rgba(34,211,238,0.08) !important;
+        }
+
+        /* Top card neon */
+        .page-top-card {
+            border: 1px solid rgba(99,102,241,0.25) !important;
+            box-shadow: 0 0 0 1px rgba(34,211,238,0.08), 0 0 40px rgba(99,102,241,0.12) !important;
+            animation: neonBorderAnim 6s ease-in-out infinite;
+        }
+
+        /* Stat cards */
+        .stat-card {
+            animation: neonPulse 4s ease-in-out infinite;
+            position: relative;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0;
+            width: 18px; height: 18px;
+            border-top: 2px solid rgba(34,211,238,0.5);
+            border-left: 2px solid rgba(34,211,238,0.5);
+            border-radius: 24px 0 0 0;
+            pointer-events: none;
+        }
+        .stat-card::after {
+            content: '';
+            position: absolute; bottom: 0; right: 0;
+            width: 18px; height: 18px;
+            border-bottom: 2px solid rgba(124,58,237,0.5);
+            border-right: 2px solid rgba(124,58,237,0.5);
+            border-radius: 0 0 24px 0;
+            pointer-events: none;
+        }
+        .stat-card:nth-child(2) { animation-delay: 1s; }
+        .stat-card:nth-child(3) { animation-delay: 2s; }
+        .stat-card:nth-child(4) { animation-delay: 3s; }
+
+        /* Product cards */
+        .product-card { position: relative; }
+        .product-card:hover {
+            border-color: rgba(34,211,238,0.4) !important;
+            box-shadow: 0 0 0 1px rgba(34,211,238,0.15), 0 0 28px rgba(34,211,238,0.12), 0 20px 50px rgba(0,0,0,0.4) !important;
+        }
+        .product-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0;
+            width: 20px; height: 20px;
+            border-top: 2px solid rgba(34,211,238,0.45);
+            border-left: 2px solid rgba(34,211,238,0.45);
+            border-radius: 24px 0 0 0;
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
+        }
+        .product-card::after {
+            content: '';
+            position: absolute; bottom: 0; right: 0;
+            width: 20px; height: 20px;
+            border-bottom: 2px solid rgba(124,58,237,0.45);
+            border-right: 2px solid rgba(124,58,237,0.45);
+            border-radius: 0 0 24px 0;
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
+        }
+        .product-card:hover::before, .product-card:hover::after { opacity: 1; }
+
+        /* Btn primary neon */
+        .btn-primary:hover {
+            box-shadow: 0 0 24px rgba(99,102,241,0.5), 0 0 50px rgba(34,211,238,0.2), 0 8px 22px rgba(56,189,248,0.3) !important;
+        }
+
+        /* Modal neon */
+        .modal-content {
+            border: 1px solid rgba(99,102,241,0.3) !important;
+            box-shadow: 0 0 0 1px rgba(34,211,238,0.1), 0 0 50px rgba(99,102,241,0.2), 0 40px 80px rgba(0,0,0,0.7) !important;
+        }
+
+        /* Plans section neon */
+        .plans-section {
+            border-color: rgba(99,102,241,0.3) !important;
+            box-shadow: inset 0 0 20px rgba(99,102,241,0.05) !important;
+        }
+
+        /* Plan chip glow */
+        .plan-chip {
+            box-shadow: 0 0 8px rgba(56,189,248,0.2) !important;
+        }
+
+        /* ─── FILE INPUT MOBILE FIX ─── */
+        input[type="file"] {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15,23,42,0.88);
+            border: 2px dashed rgba(99,102,241,0.4) !important;
+            border-radius: 14px !important;
+            color: #94a3b8;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            -webkit-appearance: none;
+            appearance: none;
+            display: block;
+        }
+        input[type="file"]::-webkit-file-upload-button {
+            background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(34,211,238,0.2));
+            border: 1px solid rgba(99,102,241,0.4);
+            border-radius: 10px;
+            color: #c7d2fe;
+            padding: 6px 14px;
+            margin-right: 12px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background: linear-gradient(135deg, rgba(99,102,241,0.4), rgba(34,211,238,0.3));
+        }
+        input[type="file"]::file-selector-button {
+            background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(34,211,238,0.2));
+            border: 1px solid rgba(99,102,241,0.4);
+            border-radius: 10px;
+            color: #c7d2fe;
+            padding: 6px 14px;
+            margin-right: 12px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        input[type="file"]:hover, input[type="file"]:focus {
+            border-color: rgba(34,211,238,0.6) !important;
+            box-shadow: 0 0 18px rgba(34,211,238,0.14) !important;
+        }
+
+        /* Image preview neon */
+        #prodImagePreview {
+            border: 2px solid rgba(34,211,238,0.3);
+            box-shadow: 0 0 20px rgba(34,211,238,0.15);
+        }
+
+        /* HOT badge neon */
+        .badge-hot {
+            box-shadow: 0 0 10px rgba(248,113,113,0.35) !important;
+            animation: neonPulse 3s ease-in-out infinite;
+        }
+
+        /* Inputs focus neon */
+        input:focus, select:focus, textarea:focus {
+            border-color: #22d3ee !important;
+            box-shadow: 0 0 0 3px rgba(34,211,238,0.12), 0 0 20px rgba(34,211,238,0.1) !important;
+        }
+
+        /* Logo glow */
+        .from-violet-500 { filter: drop-shadow(0 0 10px rgba(124,58,237,0.4)); }
+
+        /* Logout button neon */
+        #logoutBtn:hover {
+            box-shadow: 0 0 18px rgba(239,68,68,0.25) !important;
+        }
+
     </style>
 </head>
 <body>
@@ -195,6 +370,20 @@
             </div>
 
             <div>
+                <label>📤 Subir imagen (Galería / Cámara / Archivo)</label>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                    <input type="file" id="prodImageFile" accept="image/*">
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                        <button type="button" onclick="document.getElementById('prodImageFile').removeAttribute('capture');document.getElementById('prodImageFile').click();" style="flex:1;min-width:120px;padding:8px 12px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.35);border-radius:10px;color:#c7d2fe;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s">🖼️ Galería</button>
+                        <button type="button" onclick="document.getElementById('prodImageFile').setAttribute('capture','environment');document.getElementById('prodImageFile').click();" style="flex:1;min-width:120px;padding:8px 12px;background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.3);border-radius:10px;color:#a5f3fc;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s">📷 Cámara</button>
+                    </div>
+                </div>
+                <div id="prodImagePreviewWrap" class="mt-3">
+                    <img id="prodImagePreview" src="" alt="preview" class="w-32 h-20 object-cover rounded-lg hidden">
+                </div>
+            </div>
+
+            <div>
                 <label>📚 Link Tutorial / Documentación</label>
                 <input type="url" id="prodTutorialUrl" placeholder="https://example.com/tutorial">
             </div>
@@ -314,6 +503,9 @@
         document.getElementById('prodDesc').value = data.description || '';
         document.getElementById('prodFeatures').value = data.features || '';
         document.getElementById('prodImage').value = data.image || '';
+            const preview = document.getElementById('prodImagePreview');
+            if (data.image) { preview.src = data.image; preview.classList.remove('hidden'); }
+            else { preview.src = ''; preview.classList.add('hidden'); }
         document.getElementById('prodTutorialUrl').value = data.tutorial_url || '';
         document.getElementById('prodYoutubeUrl').value = data.youtube_url || '';
         document.getElementById('prodHot').checked = data.hot || false;
@@ -344,11 +536,30 @@
         addPlanRow('1 año', 4);
         document.getElementById('modalTitle').textContent = 'Agregar Producto';
         document.getElementById('productModal').classList.add('active');
+        // clear file preview
+        const preview = document.getElementById('prodImagePreview');
+        preview.src = '';
+        preview.classList.add('hidden');
     };
+
+    // Preview selected image from file input
+    document.getElementById('prodImageFile').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const preview = document.getElementById('prodImagePreview');
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.classList.remove('hidden');
+        } else {
+            preview.src = '';
+            preview.classList.add('hidden');
+        }
+    });
 
     document.getElementById('productForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         const plans = getPlans();
+
+        // Build basic product object
         const productData = {
             name: document.getElementById('prodName').value,
             price: parseFloat(document.getElementById('prodPrice').value) || (plans.length ? plans[0].price : 0),
@@ -362,9 +573,39 @@
             stock: parseInt(document.getElementById('prodStock').value) || 9999999,
             plans: plans
         };
+
+        const fileInput = document.getElementById('prodImageFile');
+        const file = fileInput.files && fileInput.files[0];
+        if (file) {
+            try {
+                const ext = file.name.split('.').pop();
+                const filePath = `products/${Date.now()}_${Math.random().toString(36).slice(2)}.${ext}`;
+                const { data: uploadData, error: uploadError } = await window.m7Supabase.storage.from('products').upload(filePath, file);
+                if (uploadError) {
+                    console.warn('Upload error:', uploadError.message || uploadError);
+                    // Show visual feedback
+                    const errTip = document.createElement('p');
+                    errTip.style.cssText = 'color:#fca5a5;font-size:0.78rem;margin-top:4px';
+                    errTip.textContent = '⚠️ Error al subir imagen: ' + (uploadError.message || 'verifique permisos de storage');
+                    document.getElementById('prodImagePreviewWrap').parentElement.appendChild(errTip);
+                    setTimeout(() => errTip.remove(), 5000);
+                } else {
+                    const { data: publicData } = window.m7Supabase.storage.from('products').getPublicUrl(filePath);
+                    if (publicData && publicData.publicUrl) productData.image = publicData.publicUrl;
+                }
+            } catch (err) { console.error('Error subiendo imagen:', err); }
+        }
+
+        const saveBtn = e.target.querySelector('[type="submit"]');
+        const origText = saveBtn.textContent;
+        saveBtn.disabled = true;
+        saveBtn.textContent = '⏳ Guardando...';
+
         const id = document.getElementById('productId').value;
         if (id) await window.m7Supabase.from('products').update(productData).eq('id', id);
         else await window.m7Supabase.from('products').insert([productData]);
+        saveBtn.disabled = false;
+        saveBtn.textContent = origText;
         closeModal();
         loadProducts();
     });
